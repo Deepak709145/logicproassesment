@@ -1,1 +1,55 @@
+#question 11
 
+class Student:
+    def __init__(self, name, marks):
+        self.__name = name
+        self.__marks = marks
+
+    # Getter methods
+    def get_name(self):
+        return self.__name
+
+    def get_marks(self):
+        return self.__marks
+
+    # Setter methods
+    def set_name(self, name):
+        self.__name = name
+
+    def set_marks(self, marks):
+        self.__marks = marks
+
+    # Display method
+    def display(self):
+        print("Name:", self.__name)
+        print("Marks:", self.__marks)
+
+
+# Create object
+s1 = Student("Deepak", 85)
+
+# Display details
+s1.display()
+
+# Update marks
+s1.set_marks(90)
+
+print("Updated Marks:", s1.get_marks())
+
+
+#QUESTION 12
+try:
+    file = open("students.txt", "r")
+
+    data = file.read()
+
+    lines = data.splitlines()
+    words = data.split()
+
+    print("Total Lines:", len(lines))
+    print("Total Words:", len(words))
+
+    file.close()
+
+except FileNotFoundError:
+    print("Error: File not found!")
